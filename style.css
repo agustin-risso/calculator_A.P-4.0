@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #3c3d3f;
+}
+
+.calculadora {
+	width: 40rem;
+	height: 45rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid transparent;
+	border-radius: 0.65rem;
+	padding: 3rem 3rem;
+	background-image: url(/images/calculatorBackground.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.display {
+	width: 100%;
+	height: 6rem;
+	background-color: #333333;
+	border: 1px solid transparent;
+	border-radius: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
+}
+
+.calculosContainer {
+	height: 20rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	gap: 2rem;
+	padding-top: 2rem;
+}
+
+.valoresDeEntrada {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+}
+
+.valoresDeEntrada input {
+	width: 100%;
+	height: 3rem;
+	border-radius: 0.4rem;
+	border: 1px solid #333333;
+	background-color: #ddd;
+	text-align: center;
+	font-size: 1.5rem;
+	outline: none;
+	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
+}
+
+.valoresDeEntrada input:focus {
+	filter: brightness(1.05);
+}
+
+.operacionesContainer {
+	width: 100%;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.operacionesContainer .botonOperacion {
+	height: 3rem;
+	width: 5rem;
+	border: 1px solid #333333;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 400;
+	font-size: 1.5rem;
+	transition: all 0.3s;
+	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
+}
+
+.operacionesContainer .botonOperacion:hover {
+	background-color: #333333;
+	color: #fff;
+}
+
+.operacionesContainer .botonOperacion:active {
+	transform: translateY(7%);
+}
+
+.botonesFormato {
+	width: 100%;
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.tema {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.tema:hover {
+	filter: brightness(1.2);
+}
+
+.tema:active {
+	transform: translateY(7%);
+}
+
+#Playa {
+	background: linear-gradient(rgb(33, 157, 234), rgb(70, 69, 69));
+	background-clip: padding-box;
+	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(14, 60, 88);
+}
+
+#Cafe {
+	background: linear-gradient(rgb(235, 166, 28), rgb(70, 69, 69));
+	background-clip: padding-box;
+	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(100, 72, 15);
+}
+
+#Jungla {
+	background: linear-gradient(rgb(1, 83, 4), rgb(70, 69, 69));
+	background-clip: padding-box;
+	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(7, 46, 9);
+}
+
+#Oficina {
+	background: linear-gradient(rgb(81, 85, 81), rgb(70, 69, 69));
+	background-clip: padding-box;
+	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(37, 39, 37);
+}
