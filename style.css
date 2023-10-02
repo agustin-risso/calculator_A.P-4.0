@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
+:root {
+	--mainGreen: #247158;
+	--darkGreen: #186049;
+	--lightGreen: #6ab29b;
+	--mainWhite: #e4d5c7;
+	--mainGray: #95877a;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -13,12 +21,12 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #3c3d3f;
+	background-color: var(--darkGreen);
 }
 
 .calculadora {
 	width: 40rem;
-	height: 45rem;
+	height: 30rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,24 +34,26 @@ body {
 	border: 1px solid transparent;
 	border-radius: 0.65rem;
 	padding: 3rem 3rem;
-	background-image: url(/images/calculatorBackground.svg);
+	background-image: url(images/calculator-background.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+/* DISPLAY */
 
 #display {
 	width: 100%;
 	height: 6rem;
 	background-color: #333333;
-	border: 1px solid transparent;
+	border: none;
 	border-radius: 1rem;
-	color: #fff;
+	color: var(--mainWhite);
 	font-size: 2rem;
 	font-weight: 400;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
+	background-clip: padding-box;
 }
 
 .Playa {
@@ -59,13 +69,15 @@ body {
 	background: linear-gradient(rgb(81, 85, 81), rgb(70, 69, 69));
 }
 
+/* SECCIÓN DE CALCULO (INPUT Y BOTONES DE OPERACIÓN) */
+
 .calculosContainer {
-	height: 20rem;
+	height: 15rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: start;
+	justify-content: center;
 	gap: 2rem;
 	padding-top: 2rem;
 }
@@ -82,11 +94,10 @@ body {
 	height: 3rem;
 	border-radius: 0.4rem;
 	border: 1px solid #333333;
-	background-color: #ddd;
+	background-color: var(--lightGreen);
 	text-align: center;
 	font-size: 1.5rem;
 	outline: none;
-	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
 }
 
 .valoresDeEntrada input:focus {
@@ -104,7 +115,9 @@ body {
 .operacionesContainer .botonOperacion {
 	height: 3rem;
 	width: 5rem;
-	border: 1px solid #333333;
+	border: 1px solid var(--mainGreen);
+	background-color: var(--mainGreen);
+	color: var(--mainGray);
 	border-radius: 0.4rem;
 	cursor: pointer;
 	display: flex;
@@ -113,17 +126,17 @@ body {
 	font-weight: 400;
 	font-size: 1.5rem;
 	transition: all 0.3s;
-	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
 }
 
 .operacionesContainer .botonOperacion:hover {
-	background-color: #333333;
-	color: #fff;
+	filter: brightness(1.15);
 }
 
 .operacionesContainer .botonOperacion:active {
 	transform: translateY(7%);
 }
+
+/* TEMA DE DISPLAY */
 
 .botonesFormato {
 	width: 100%;
@@ -137,7 +150,7 @@ body {
 	height: 3rem;
 	width: 3rem;
 	border-radius: 50%;
-	border: 1px solid transparent;
+	border: none;
 	cursor: pointer;
 	transition: all 0.3s;
 }
@@ -153,23 +166,71 @@ body {
 #Playa {
 	background: linear-gradient(rgb(33, 157, 234), rgb(70, 69, 69));
 	background-clip: padding-box;
-	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(14, 60, 88);
 }
 
 #Cafe {
 	background: linear-gradient(rgb(235, 166, 28), rgb(70, 69, 69));
 	background-clip: padding-box;
-	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(100, 72, 15);
 }
 
 #Jungla {
 	background: linear-gradient(rgb(1, 83, 4), rgb(70, 69, 69));
 	background-clip: padding-box;
-	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(7, 46, 9);
 }
 
 #Oficina {
 	background: linear-gradient(rgb(81, 85, 81), rgb(70, 69, 69));
 	background-clip: padding-box;
-	box-shadow: 1.1rem 1.1rem 4rem 0.1rem rgb(37, 39, 37);
+}
+
+/* MEDIA QUERY PARA RESPONSIVIDAD*/
+
+@media screen and (max-width: 660px) {
+	.calculadora {
+		width: 30rem;
+	}
+
+	.valoresDeEntrada {
+		flex-direction: column;
+	}
+
+	.botonesFormato {
+		padding-top: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.calculadora {
+		height: 20rem;
+		width: 20rem;
+		justify-content: center;
+	}
+	.calculosContainer {
+		gap: 0.75rem;
+	}
+	.valoresDeEntrada input {
+		height: 1.5rem;
+		font-size: 1.1rem;
+	}
+	.operacionesContainer .botonOperacion {
+		height: 1.5rem;
+		width: 3rem;
+		font-size: 1.1rem;
+	}
+	.botonesFormato {
+		padding-top: 1rem;
+	}
+	.tema {
+		width: 2rem;
+		height: 2rem;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	.calculadora {
+		width: 15rem;
+	}
+	.operacionesContainer .botonOperacion {
+		width: 2rem;
+	}
 }
