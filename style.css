@@ -31,7 +31,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-.display {
+#display {
 	width: 100%;
 	height: 6rem;
 	background-color: #333333;
@@ -44,6 +44,19 @@ body {
 	align-items: center;
 	justify-content: center;
 	box-shadow: 1.1rem 1.1rem 3rem 0.1rem #aaa;
+}
+
+.Playa {
+	background: linear-gradient(rgb(33, 157, 234), rgb(70, 69, 69));
+}
+.Cafe {
+	background: linear-gradient(rgb(235, 166, 28), rgb(70, 69, 69));
+}
+.Jungla {
+	background: linear-gradient(rgb(1, 83, 4), rgb(70, 69, 69));
+}
+.Oficina {
+	background: linear-gradient(rgb(81, 85, 81), rgb(70, 69, 69));
 }
 
 .calculosContainer {
